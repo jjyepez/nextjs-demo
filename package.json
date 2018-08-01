@@ -1,0 +1,22 @@
+{
+  "name": "platzi-memes-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "prod": "next build && next start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "next": "6.1.1",
+    "onsenui": "^2.10.4",
+    "react": "16.4.1",
+    "react-dom": "16.4.1",
+    "react-onsenui": "^1.11.1"
+  }
+}
