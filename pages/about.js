@@ -1,12 +1,20 @@
 import React, { Component } from 'react'
+import 'isomorphic-fetch'
 
 class About extends Component {
+    static async getInitialProps(){
+        const url = `https://noesishosting.com/sw/loremdata/?a=rs&p=nombre:10`
+        const rsp = await fetch( url ).catch( e => console.log(e) )
+        const data = await rsp.json().catch( e => console.log(e) )
+        return { data: data }
+    }
     render(){
+console.log( 1, this.props )
         return (
             <div>
                 <div><h1>About</h1></div>
                 <div><img src = "/static/yo.jpg"/></div>
-                <div><button>Acceder</button></div>
+                <div><button>{ this.props.buttonText }</button></div>
 
                 <style jsx>{`
                     :global(body){
