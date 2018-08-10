@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Link from 'next/link'
 
 class Preview extends Component {
     static async getInitialProps({ query }){
@@ -8,7 +9,7 @@ class Preview extends Component {
     render(){
         return (
             <div>
-                <img src={ this.props.img } />
+                <Link href="/"><a><img src={ this.props.img } /></a></Link>
                 <style jsx>{`
                     :global(body){
                         margin:0;
