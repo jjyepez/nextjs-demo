@@ -8,7 +8,7 @@ class TrendGrid extends Component {
         const dataKeys = data ? Object.keys( data ) : []
         return (
             <div className = "TrendGrid">
-                <h2>Trend</h2>
+                <h2>Tendencia</h2>
                 <div className = "contenedor">
                     { dataKeys.map( i => {
                         const el = data[i]
@@ -25,21 +25,19 @@ class TrendGrid extends Component {
                         justify-content: center;
                         align-items: center;
                     }
-                    h2 {
-                        align-self: center;
-                    }
                     .contenedor{
+                        width: Calc(100% - 1rem);
                         display: grid;
                         justify-content: center;
                         align-items: center;
-                        grid-template-columns: repeat(auto-fill, 260px);
+                        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
                         grid-gap:1rem;
-                        padding: 0 1rem;
-                        width: 100%;
+                        padding: 0 .5rem;
+                        margin-bottom: 60px;
                     }
                     img {
                         width:100%;
-                        height: 160px;
+                        height: auto;
                         object-fit: cover;
                         border-radius: .5rem;
                     }

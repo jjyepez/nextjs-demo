@@ -33,7 +33,7 @@ class Categories extends Component {
                         display: flex;
                     }
                     .CategoryList {
-                        margin: 1rem 0;
+                        margin: .5rem 0;
                         max-width: 100vw;
                         display: flex;
                     }
@@ -43,11 +43,11 @@ class Categories extends Component {
                     .CategoryButton {
                         border-radius: 2rem;
                         display: grid;
-                        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+                        grid-template-columns: repeat(auto-fill, minmax(auto, 1fr));
                         text-align: center;
-                        margin: 0 .25rem;
+                        margin: .25rem;
                         background-color: #ddd;
-                        padding: .5rem 1.25rem;
+                        padding: .35rem 1rem;
                     }
                 `}
                 </style>

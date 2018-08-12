@@ -8,8 +8,8 @@ class RecentGrid extends Component {
         const dataKeys = data ? Object.keys( data ) : []
         return (
             <div className = "RecentGrid">
-                <h2>Recent</h2>
-                <div className = "contenedor">
+                <h2>Búsquedas recientes</h2>
+                <div className = "scroller">
                     { dataKeys.map( i => {
                         const el = data[i]
                         return (
@@ -25,32 +25,21 @@ class RecentGrid extends Component {
                         justify-content: center;
                         align-items: center;
                     }
-                    h2 {
-                        align-self: center;
-                    }
-                    .contenedor{
-                        display: grid;
-                        justify-content: center;
-                        align-items: center;
-                        grid-template-columns: repeat(auto-fill, 260px);
-                        grid-gap:1rem;
-                        padding: 0 1rem;
+                    .scroller {
                         width: 100%;
+                        overflow: auto;
+                        display: flex;
                     }
                     img {
-                        width:100%;
-                        height: 160px;
+                        width:200px;
+                        height: 120px;
                         object-fit: cover;
                         border-radius: .5rem;
-                    }
-                    .page{
-                        margin-top: 56px;
-                        flex: 1;
-                        width:100%;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        flex-direction: column;
+                        display: grid;
+                        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+                        text-align: center;
+                        margin: 0 .5rem;
+                        background-color: #ddd;
                     }
                  `}</style>
             </div>

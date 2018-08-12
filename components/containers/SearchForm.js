@@ -1,14 +1,23 @@
 import React, { Component } from 'react'
 
+import {
+    FiSearch
+} from 'react-icons/fi'
+
 class SearchForm extends Component {
     render(){
         return (
             <div className="SearchForm">
                 <form>
-                    <input type="search" placeholder="Buscar"/>
+                    <div className = "Search">
+                        <input type="search" placeholder="Buscar"/>
+                    </div>
                 </form>
 
                 <style jsx>{`
+                    .Search {
+                        position: ansolute;
+                    }
                     .SearchForm {
                         width: 100%;
                     }

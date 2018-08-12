@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-//import 'isomorphic-fetch'
+
 import firebase from 'firebase'
 
 import Layout from '../components/containers/Layout'
 
 import ToolbarComun from '../widgets/containers/ToolbarComun'
+import BottomToolbar from '../widgets/containers/BottomToolbar'
 import SearchForm from '../components/containers/SearchForm'
 import Categories from '../components/containers/Categories'
 import RecentGrid from '../components/containers/RecentGrid'
@@ -46,6 +47,8 @@ export default class extends Component {
                 <Categories/>
                 <RecentGrid data = { data }/>
                 <TrendGrid data = { data }/>
+
+                <BottomToolbar />
             </Layout>
         )
     }
