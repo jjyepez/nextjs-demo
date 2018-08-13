@@ -24,12 +24,19 @@ class Layout extends Component {
                         margin: 0;
                         font-family: system-ui;
                         display: flex;
-                        color: #555;
+                        color: #333;
+                        background-color: rgba(240,242,245,1);
+                    }
+                    :global(svg[viewbox="0 0 24 24"]){
+                        stroke-width: .075rem;
                     }
                     :global(h2){
-                        align-self: center;
-                        margin: 1rem 0;
-                        font-size: 1.25rem;
+                        align-self: flex-start;
+                        margin: 0 0 .5rem .5rem;
+                        font-size: 1.5rem;
+                    }
+                    :global(h2:first-of-type){
+                        
                     }
                     .page{
                         margin-top: 56px;

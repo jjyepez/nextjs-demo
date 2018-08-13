@@ -1,12 +1,6 @@
 const withOffline = require('next-offline')
 
 module.exports = withOffline({
-  exportPathMap: function () {
-    return {
-      '/': { page: '/' },
-      '/upload': { page: '/upload' }
-    }
-  },
   workboxOpts: {
     runtimeCaching: [
       {

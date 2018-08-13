@@ -3,18 +3,19 @@ import React, { Component } from 'react'
 import Link from 'next/link'
 
 import {
-    FiArrowLeft
+    FiArrowLeft, FiSettings
 } from 'react-icons/fi'
 
 class ToolbarComun extends Component {
     render(){
         const { hasBackButton, right } = this.props
+        const iconSize = '1.5rem'
         return (
             <header>
                 <div className = "left">
                     { hasBackButton ? (
                         <Link href="index"><a>
-                            <FiArrowLeft size = '1.25rem'/>
+                            <FiArrowLeft size = { iconSize }/>
                         </a></Link>
                     ) : (
                         <div className = "avatar"></div>
@@ -25,6 +26,9 @@ class ToolbarComun extends Component {
                 </div>
                 <div className = "right">
                     { right && right() }
+                    <Link href="index"><a>
+                        <FiSettings size = { iconSize }/>
+                    </a></Link>
                 </div>
 
                 <style jsx>{`

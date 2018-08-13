@@ -9,25 +9,27 @@ import {
 } from 'react-icons/fi'
 
 class BottomToolbar extends Component {
+    
     render(){
+        const iconSize = "1.75rem"
         return (
             <div className = "BottomToolbar">
                 <div className = "Button">
-                    <FiHome size="1.25rem"/>
+                    <FiHome size={ iconSize }/>
                     <label>Inicio</label>
                 </div>
                 <div className = "Button">
-                    <FiHeart size="1.25rem"/>
+                    <FiHeart size={ iconSize }/>
                     <label>Favs</label>
                 </div>
                 <div className = "Button">
                     <Link href="upload"><a>
-                        <FiPlusSquare size="1.25rem"/>
+                        <FiPlusSquare size={ iconSize }/>
                         <label>New</label>
                     </a></Link>
                 </div>
                 <div className = "Button">
-                    <FiUser size="1.25rem"/>
+                    <FiUser size={ iconSize }/>
                     <label>Profile</label>
                 </div>
 
@@ -37,6 +39,7 @@ class BottomToolbar extends Component {
                     }
                     .Button label {
                         font-size: .75rem;
+                        display: none;
                     }
                     .BottomToolbar {
                         box-shadow: 0 0 5px rgba(0,0,0,.25);

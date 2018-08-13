@@ -1,1 +1,0 @@
-module.exports=__NEXT_REGISTER_PAGE("/upload",function(){return{page:webpackJsonp([2],{283:function(e,o,n){e.exports=n(284)}},[283]).default}});

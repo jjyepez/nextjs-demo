@@ -48,7 +48,7 @@ export default class extends Component {
                 <RecentGrid data = { data }/>
                 <TrendGrid data = { data }/>
 
-                <BottomToolbar />
+                <BottomToolbar/>
             </Layout>
         )
     }
