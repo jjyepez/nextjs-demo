@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+// --- import Link from 'next/link'
+import { Link } from '../../routes'
+
 class Categories extends Component {
     state = {
         categories: [ 
@@ -27,14 +30,15 @@ class Categories extends Component {
                 <div className="scroller" ref = { el => this.scroller = el }>
                     { categories.map( (el, i)  => {
                         return (
-                            <div
-                                key = { i }
-                                className = "CategoryButton"
-                                style= {{
-                                    backgroundColor: el.color,
-                                    boxShadow: `0 3px 20px -5px ${el.color}`
-                                }}
-                            >{ el.label }</div>
+                            <Link key = { i } route='category' params={{idCat: el.label}}><a>
+                                <div
+                                    className = "CategoryButton"
+                                    style= {{
+                                        backgroundColor: el.color,
+                                        boxShadow: `0 3px 20px -5px ${el.color}`
+                                    }}
+                                >{ el.label }</div>
+                            </a></Link>
                         )
                     })}
                 </div>

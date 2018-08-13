@@ -1,32 +1,41 @@
 import React, { Component } from 'react'
 
-import Link from 'next/link'
+// --- import Link from 'next/link'
+import { Link } from '../../routes'
 
 import {
     FiArrowLeft, FiSettings
 } from 'react-icons/fi'
 
 class ToolbarComun extends Component {
+    contextMenu = () => {
+
+    }
     render(){
-        const { hasBackButton, right } = this.props
+        const {
+            hasBackButton,
+            renderCenter,
+            renderRight
+        } = this.props
         const iconSize = '1.5rem'
         return (
             <header>
                 <div className = "left">
                     { hasBackButton ? (
-                        <Link href="index"><a>
+                        <Link route="/index"><a>
                             <FiArrowLeft size = { iconSize }/>
                         </a></Link>
                     ) : (
-                        <div className = "avatar"></div>
+                        (false && <div onClick = { this.contextMenu() } className = "avatar"></div>) ||
+                        <div onClick = { this.contextMenu() } className = "logo"></div>
                     )}
                 </div>
                 <div className = "center">
-                    { this.props.center() }
+                    { renderCenter() }
                 </div>
                 <div className = "right">
-                    { right && right() }
-                    <Link href="index"><a>
+                    { renderRight && renderRight() }
+                    <Link route="settings"><a>
                         <FiSettings size = { iconSize }/>
                     </a></Link>
                 </div>
@@ -37,6 +46,13 @@ class ToolbarComun extends Component {
                         height: 2.5rem;
                         border-radius: 100%;
                         background-color: #ddd;
+                    }
+                    .logo {
+                        width: 2.5rem;
+                        height: 2.5rem;
+                        border-radius: 100%;
+                        background: url(/static/icon.png);
+                        background-size: cover;
                     }
                     button {
                         font-size: 1rem;

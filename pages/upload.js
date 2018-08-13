@@ -120,10 +120,8 @@ class Upload extends Component {
             <Layout>
                 <ToolbarComun 
                     hasBackButton = { true }
-                    center = { () => 'Subir' }
-                    right = { () => (
-                        <button className="bEnviar" type="button">Enviar</button>
-                    )}
+                    renderCenter = { () => 'Subir' }
+                    renderRight = { null }
                 />
                 <div className = "barraProg" ref = { el => this.progressBar = el } ></div>
                 <h3>Subir archivo</h3>
@@ -140,6 +138,8 @@ class Upload extends Component {
                         <input id="ancho" placeholder="ancho"/>
                         <input id="alto" placeholder="alto"/>
                         <input id="size" placeholder="size"/>
+
+                        <button className="bEnviar" type="button">Enviar</button>
                     </div>
                 </form>
 

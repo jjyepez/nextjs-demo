@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import Link from 'next/link'
+
+// --- import Link from 'next/link'
+import { Link } from '../../routes'
 
 import {
     FiHome,
@@ -15,22 +17,28 @@ class BottomToolbar extends Component {
         return (
             <div className = "BottomToolbar">
                 <div className = "Button">
-                    <FiHome size={ iconSize }/>
-                    <label>Inicio</label>
+                    <Link route = "index"><a>
+                        <FiHome size={ iconSize }/>
+                        <label>Inicio</label>
+                    </a></Link>
                 </div>
                 <div className = "Button">
-                    <FiHeart size={ iconSize }/>
-                    <label>Favs</label>
+                    <Link route = "favs"><a>
+                        <FiHeart size={ iconSize }/>
+                        <label>Favs</label>
+                    </a></Link>
                 </div>
                 <div className = "Button">
-                    <Link href="upload"><a>
+                    <Link route="upload"><a>
                         <FiPlusSquare size={ iconSize }/>
                         <label>New</label>
                     </a></Link>
                 </div>
                 <div className = "Button">
-                    <FiUser size={ iconSize }/>
-                    <label>Profile</label>
+                    <Link route = "profile"><a>
+                        <FiUser size={ iconSize }/>
+                        <label>Profile</label>
+                    </a></Link>
                 </div>
 
                 <style jsx>{`
@@ -52,6 +60,7 @@ class BottomToolbar extends Component {
                         position: fixed;
                         height: 56px;
                         bottom: 0;
+                        left: 0;
                         width: 100vw;
                     }
                     .BottomToolbar > div {

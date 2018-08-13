@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 
+import BottomToolbar from '../../widgets/containers/BottomToolbar';
 import Head from 'next/head'
 
 class Layout extends Component {
     render(){
+        const { showBottomToolbar } = this.props
         return (
             <div className = "page">
                 <Head>
@@ -14,6 +16,8 @@ class Layout extends Component {
                 </Head>
 
                 { this.props.children }
+
+                { showBottomToolbar && <BottomToolbar/> }
 
                 <style jsx>{`
                     :global(body){
@@ -30,9 +34,13 @@ class Layout extends Component {
                     :global(svg[viewbox="0 0 24 24"]){
                         stroke-width: .075rem;
                     }
+                    :global(a){
+                        text-decoration: none;
+                        color: inherit;
+                    }
                     :global(h2){
                         align-self: flex-start;
-                        margin: 0 0 .5rem .5rem;
+                        margin-left: .5rem;
                         font-size: 1.5rem;
                     }
                     :global(h2:first-of-type){

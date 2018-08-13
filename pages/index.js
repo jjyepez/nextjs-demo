@@ -42,8 +42,10 @@ export default class extends Component {
         return (
             <Layout className="page">
                 <ToolbarComun
-                    center = { () => <SearchForm/> }
+                    renderCenter = { () => <SearchForm/> }
+                    renderRight = { null }
                 />
+
                 <Categories/>
                 <RecentGrid data = { data }/>
                 <TrendGrid data = { data }/>
